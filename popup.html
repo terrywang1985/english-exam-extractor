@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: "Microsoft YaHei", Arial, sans-serif;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h2 {
+      color: #333;
+      margin: 0;
+    }
+    .description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .export-options {
+      margin-bottom: 20px;
+    }
+    .option-group {
+      margin-bottom: 15px;
+    }
+    .option-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 14px;
+    }
+    .option-desc {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-bottom: 8px;
+      transition: background-color 0.3s;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+    .btn-success {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-success:hover {
+      background-color: #1e7e34;
+    }
+    .btn:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .status {
+      text-align: center;
+      margin: 15px 0;
+      min-height: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .status.loading {
+      background-color: #e3f2fd;
+      color: #1976d2;
+    }
+    .status.success {
+      background-color: #e8f5e8;
+      color: #2e7d32;
+    }
+    .status.error {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+    .tips {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 4px;
+      padding: 8px;
+      font-size: 12px;
+      color: #856404;
+      margin-top: 15px;
+    }
+    .tips strong {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>英语试卷提取器 v4.0</h2>
+  </div>
+  
+  <div class="description">
+    选择导出方式，将当前页面的试卷内容保存到本地。
+  </div>
+  
+  <div class="export-options">
+    <div class="option-group">
+      <div class="option-title">📄 完整试卷（含答案）</div>
+      <div class="option-desc">包含题目和答案，完美保留样式，支持打印</div>
+      <button id="exportHTMLBtn" class="btn btn-primary">导出完整试卷</button>
+    </div>
+    
+    <div class="option-group">
+      <div class="option-title">📋 仅答案页</div>
+      <div class="option-desc">单独导出答案，方便打印后核对</div>
+      <button id="exportAnswerBtn" class="btn btn-success">导出答案页</button>
+    </div>
+  </div>
+  
+  <div id="status" class="status"></div>
+  
+  <div class="tips">
+    <strong>使用建议：</strong><br>
+    • 先导出完整试卷打印给学生答题<br>
+    • 再导出答案页单独打印用于批改<br>
+    • 打印设置：浏览器打印 → 更多设置 → 背景图形
+  </div>
+  
+  <script src="popup-v4.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "英语试卷提取器 v2.0",
+  "version": "2.0",
+  "description": "自动提取网页中的英语试卷内容，支持HTML和PDF格式导出，完美解决中文显示问题",
+  "icons": {
+    "16": "icons/icon16.png",
+    "128": "icons/icon.svg"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "提取试卷内容",
+    "default_icon": "icons/icon16.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["html-extractor-v4.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
