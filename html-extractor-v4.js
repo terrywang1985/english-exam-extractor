@@ -189,9 +189,15 @@ function extractExamAsHTML() {
         }
         
         /* 隐藏答案时的样式 */
-        .hide-answers .question-answer,
-        .hide-answers .option-correct {
+        .hide-answers .question-answer {
             display: none !important;
+        }
+        
+        /* 隐藏答案时，移除正确选项的高亮样式，但保留选项本身 */
+        .hide-answers .option-correct {
+            background-color: transparent !important;
+            border: 1px solid #ddd !important;
+            font-weight: normal !important;
         }
         
         /* 控制按钮样式 */
